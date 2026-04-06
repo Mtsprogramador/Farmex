@@ -3,6 +3,7 @@ package Conexao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 
 public class Conexao {
@@ -18,7 +19,7 @@ public class Conexao {
         try{
             return DriverManager.getConnection(URL,USER,PASS);
         }catch(Exception e){
-            System.out.println("erro na Conexão"+e.getMessage());
+            JOptionPane.showMessageDialog(null, "Erro na conexão: " + e.getMessage());
             return null;
         }}
     public void desconectar(){
